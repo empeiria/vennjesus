@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet"> 
+    <title>Venn Diagramm</title>
+  <style>
+body {
+font-size : 20px;
+font-family: 'Staatliches', cursive;
+}
+</style>
+</head>
+
+<body>
+    <div id="venn"></div>
+
+<script id="jsbin-source-html" type="text/html">
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet"> 
+    <title>Venn Diagramm</title>
+  <style>
+body {
+font-size : 20px;
+font-family: 'Staatliches', cursive;
+}
+</style>
+</head>
+
+<body>
+    <div id="venn"></div>
+</body>
+
+<script src="https://d3js.org/d3.v4.min.js"><\/script>
+<script src="https://benfred.github.io/venn.js/venn.js"><\/script>
+<script>
+var sets = [
+            {sets:["macht zu Jüngern"], size: 12},
+            {sets:["verehrt und gefürchtet"], size: 12},
+            {sets:["auferstanden von den Toten"], size: 12},
+            {sets: ["macht zu Jüngern", "verehrt und gefürchtet"], size: 4, label: "Dracula"},
+            {sets: ["macht zu Jüngern", "auferstanden von den Toten"], size: 4, label: "Zombie", },
+            {sets: ["verehrt und gefürchtet", "auferstanden von den Toten"], size: 4, label: "Frankenstein"},
+            {sets: ["macht zu Jüngern", "verehrt und gefürchtet", "auferstanden von den Toten"], size: 2, label: "Jesus Christus"}
+    ];
+
+var chart = venn.VennDiagram()
+    chart.wrap(false) 
+    .width(600)
+    .height(600);
+
+var div = d3.select("#venn").datum(sets).call(chart);
+div.selectAll("text").style("fill", "white");
+div.selectAll(".venn-circle path").style("fill-opacity", .73);
+
+<\/script>
+</html></script>
+
+</body>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://benfred.github.io/venn.js/venn.js"></script>
+<script>
+var sets = [
+            {sets:["macht zu Jüngern"], size: 12},
+            {sets:["verehrt und gefürchtet"], size: 12},
+            {sets:["auferstanden von den Toten"], size: 12},
+            {sets: ["macht zu Jüngern", "verehrt und gefürchtet"], size: 4, label: "Dracula"},
+            {sets: ["macht zu Jüngern", "auferstanden von den Toten"], size: 4, label: "Zombie", },
+            {sets: ["verehrt und gefürchtet", "auferstanden von den Toten"], size: 4, label: "Frankenstein"},
+            {sets: ["macht zu Jüngern", "verehrt und gefürchtet", "auferstanden von den Toten"], size: 2, label: "Jesus Christus"}
+    ];
+
+var chart = venn.VennDiagram()
+    chart.wrap(false) 
+    .width(600)
+    .height(600);
+
+var div = d3.select("#venn").datum(sets).call(chart);
+div.selectAll("text").style("fill", "white");
+div.selectAll(".venn-circle path").style("fill-opacity", .73);
+
+</script>
+</html>
